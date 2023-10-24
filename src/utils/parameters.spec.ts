@@ -1,8 +1,8 @@
 import assert from "assert";
-import test from "test";
+import test from "node:test";
 import { getParameterValue, parseParameters } from "./parameters.js";
 
-test("read-parameter", async (t) => {
+test("read-parameter", () => {
   const parameters = {
     string: ["hi"],
     number: ["10.5"],
@@ -21,7 +21,7 @@ test("read-parameter", async (t) => {
   }
 });
 
-test("parse-parameters", async (t) => {
+test("parse-parameters", () => {
   assert.deepEqual(parseParameters("a:1,b:2", "", ",", ":"), {
     a: "1",
     b: "2",
