@@ -3,11 +3,17 @@
   "version": "0.0.0",
   "description": "",
   "type": "module",
-  "main": "out/main.js",
-  "types": "out/main.d.ts",
+  "main": "./out/main.js",
+  "types": "./out/main.d.ts",
+  "exports": {
+    ".": {
+      "default": "./out/main.js",
+      "browser": "./out/browser.js"
+    }
+  },
   "files": [
-    "out/*",
-    "src/*"
+    "./out/*",
+    "./src/*"
   ],
   "scripts": {
     "prepare": "npm run compile",
@@ -32,7 +38,8 @@
     "library"
   ],
   "dependencies": {
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.2",
+    "type-fest": "^4.5.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.8",
