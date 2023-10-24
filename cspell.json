@@ -4,9 +4,6 @@
   "language": "en",
   "useGitignore": true,
   "enableGlobDot": true,
-  "words": [
-    "lcov",
-    "npmjs",
-    "openapi"
-  ]
+  "words": ["lcov", "npmjs", "openapi", "Promisable"],
+  "ignorePaths": [".*"]
 }
