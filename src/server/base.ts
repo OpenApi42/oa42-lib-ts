@@ -3,7 +3,7 @@ import * as http from "http";
 import * as http2 from "http2";
 import { Readable, Writable, finished } from "stream";
 import { Promisable } from "type-fest";
-import { Parameters, Status } from "../utils/index.js";
+import { Parameters, StatusCode } from "../utils/index.js";
 
 export interface ServerIncomingRequest {
   path: string;
@@ -14,7 +14,7 @@ export interface ServerIncomingRequest {
 }
 
 export interface ServerOutgoingResponse {
-  status: Status;
+  status: StatusCode;
   headers: Parameters;
   stream?(signal?: AbortSignal): AsyncIterable<Uint8Array>;
 }

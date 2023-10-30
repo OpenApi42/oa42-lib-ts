@@ -1,2 +1,2 @@
 export * from "./parameters.js";
-export * from "./status.js";
+export * from "./status-code.js";
