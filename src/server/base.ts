@@ -24,7 +24,7 @@ export interface RequestListenerOptions {
 }
 
 export abstract class ServerBase {
-  protected abstract handle(
+  protected abstract routeHandler(
     incomingRequest: ServerIncomingRequest,
   ): Promisable<ServerOutgoingResponse>;
 
@@ -82,7 +82,7 @@ export abstract class ServerBase {
           },
         };
 
-        const outgoingResponse = await this.handle(incomingRequest);
+        const outgoingResponse = await this.routeHandler(incomingRequest);
 
         response.statusCode = outgoingResponse.status;
         for (const [headerName, headerValue] of Object.entries(
