@@ -23,7 +23,25 @@ export interface RequestListenerOptions {
   onError?: (error: unknown) => void;
 }
 
+export interface ServerOptions {
+  validateRequestEntity?: boolean;
+  validateResponseEntity?: boolean;
+  validateRequestParameters?: boolean;
+  validateResponseParameters?: boolean;
+}
+export const defaultServerOptions = {
+  validateRequestEntity: true,
+  validateResponseEntity: false,
+  validateRequestParameters: true,
+  validateResponseParameters: false,
+};
+
 export abstract class ServerBase {
+  protected readonly options: ServerOptions & typeof defaultServerOptions;
+  constructor(options: ServerOptions = {}) {
+    this.options = { ...defaultServerOptions, ...options };
+  }
+
   protected abstract routeHandler(
     incomingRequest: ServerIncomingRequest,
   ): Promisable<ServerOutgoingResponse>;
