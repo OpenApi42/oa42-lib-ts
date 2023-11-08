@@ -40,27 +40,35 @@ export class OperationNotImplemented extends ServerError {
   }
 }
 
-export class UnexpectedResponseStatusCode extends ServerError {
-  public readonly name = "UnexpectedStatusCode";
+export class UnexpectedServerResponseStatusCode extends ServerError {
+  public readonly name = "UnexpectedServerResponseStatusCode";
 
   constructor() {
-    super(`Unexpected status code for response`);
+    super(`Unexpected status code for server response`);
   }
 }
 
-export class MissingRequestContentType extends ServerError {
-  public readonly name = "MissingRequestContentType";
+export class MissingServerRequestContentType extends ServerError {
+  public readonly name = "MissingServerRequestContentType";
 
   constructor() {
-    super(`Missing content-type in request`);
+    super(`Missing content-type in server request`);
   }
 }
 
-export class UnexpectedRequestContentType extends ServerError {
-  public readonly name = "UnexpectedRequestContentType";
+export class UnexpectedServerRequestContentType extends ServerError {
+  public readonly name = "UnexpectedServerRequestContentType";
 
   constructor() {
-    super(`Unexpected content-type in request`);
+    super(`Unexpected content-type in server request`);
+  }
+}
+
+export class UnexpectedServerResponseContentType extends ServerError {
+  public readonly name = "UnexpectedServerResponseContentType";
+
+  constructor() {
+    super(`Unexpected content-type in server reponse`);
   }
 }
 
