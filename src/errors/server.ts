@@ -40,14 +40,6 @@ export class OperationNotImplemented extends ServerError {
   }
 }
 
-export class UnexpectedServerResponseStatusCode extends ServerError {
-  public readonly name = "UnexpectedServerResponseStatusCode";
-
-  constructor() {
-    super(`Unexpected status code for server response`);
-  }
-}
-
 export class MissingServerRequestContentType extends ServerError {
   public readonly name = "MissingServerRequestContentType";
 
@@ -61,14 +53,6 @@ export class UnexpectedServerRequestContentType extends ServerError {
 
   constructor() {
     super(`Unexpected content-type in server request`);
-  }
-}
-
-export class UnexpectedServerResponseContentType extends ServerError {
-  public readonly name = "UnexpectedServerResponseContentType";
-
-  constructor() {
-    super(`Unexpected content-type in server reponse`);
   }
 }
 
