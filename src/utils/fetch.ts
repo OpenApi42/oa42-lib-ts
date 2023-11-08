@@ -11,7 +11,9 @@ export async function toFetchBody(iterable: AsyncIterable<Uint8Array>) {
   return Uint8Array.from(collected).buffer;
 }
 
-export async function* fromFetchBody(stream: ReadableStream<Uint8Array>) {
+export async function* fromFetchBody(
+  stream: ReadableStream<Uint8Array>,
+): AsyncIterable<Uint8Array> {
   /*
   read a readable stream as an AsyncIterable<Uint8Array>
   */
