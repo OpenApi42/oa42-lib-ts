@@ -40,19 +40,19 @@ export class OperationNotImplemented extends ServerError {
   }
 }
 
-export class MissingRequestContentType extends ServerError {
-  public readonly name = "MissingRequestContentType";
-
-  constructor() {
-    super(`Missing content-type in request`);
-  }
-}
-
 export class UnexpectedResponseStatusCode extends ServerError {
   public readonly name = "UnexpectedStatusCode";
 
   constructor() {
     super(`Unexpected status code for response`);
+  }
+}
+
+export class MissingRequestContentType extends ServerError {
+  public readonly name = "MissingRequestContentType";
+
+  constructor() {
+    super(`Missing content-type in request`);
   }
 }
 
@@ -64,34 +64,34 @@ export class UnexpectedRequestContentType extends ServerError {
   }
 }
 
-export class RequestParameterValidationFailed extends ServerError {
-  public readonly name = "Request parameter validation failed";
+export class ServerRequestParameterValidationFailed extends ServerError {
+  public readonly name = "ServerRequestParameterValidationFailed";
 
   constructor() {
-    super(`Request parameter validation failed`);
+    super(`Server request parameter validation failed`);
   }
 }
 
-export class ResponseParameterValidationFailed extends ServerError {
-  public readonly name = "Response parameter validation failed";
+export class ServerResponseParameterValidationFailed extends ServerError {
+  public readonly name = "ServerResponseParameterValidationFailed";
 
   constructor() {
-    super(`Response parameter validation failed`);
+    super(`Server response parameter validation failed`);
   }
 }
 
-export class RequestEntityValidationFailed extends ServerError {
-  public readonly name = "Request parameter validation failed";
+export class ServerRequestEntityValidationFailed extends ServerError {
+  public readonly name = "ServerRequestEntityValidationFailed";
 
   constructor() {
-    super(`Request entity validation failed`);
+    super(`Server request entity validation failed`);
   }
 }
 
-export class ResponseEntityValidationFailed extends ServerError {
-  public readonly name = "Response entity validation failed";
+export class ServerResponseEntityValidationFailed extends ServerError {
+  public readonly name = "ServerResponseEntityValidationFailed";
 
   constructor() {
-    super(`Response entity validation failed`);
+    super(`Server response entity validation failed`);
   }
 }
