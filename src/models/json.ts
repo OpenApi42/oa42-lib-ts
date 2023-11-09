@@ -68,8 +68,8 @@ export type IncomingJsonContainer<T> = {
 
 //#region serialization
 
-export async function* serializeJsonEntity<T>(
-  asyncEntity: Promisable<T>,
+export async function* serializeJsonEntity(
+  asyncEntity: Promisable<unknown>,
 ): AsyncIterable<Uint8Array> {
   const encoder = new TextEncoder();
 
@@ -77,8 +77,8 @@ export async function* serializeJsonEntity<T>(
   yield encoder.encode(JSON.stringify(entity));
 }
 
-export async function* serializeJsonEntities<T>(
-  entities: AsyncIterable<T>,
+export async function* serializeJsonEntities(
+  entities: AsyncIterable<unknown>,
 ): AsyncIterable<Uint8Array> {
   const encoder = new TextEncoder();
 
@@ -88,9 +88,9 @@ export async function* serializeJsonEntities<T>(
   }
 }
 
-export async function deserializeJsonEntity<T>(
+export async function deserializeJsonEntity(
   stream: (signal?: AbortSignal) => AsyncIterable<Uint8Array>,
-): Promise<T> {
+): Promise<unknown> {
   const text = await deserializeTextValue(stream);
 
   const trimmed = text.trim();
@@ -99,10 +99,10 @@ export async function deserializeJsonEntity<T>(
   return entity;
 }
 
-export async function* deserializeJsonEntities<T>(
+export async function* deserializeJsonEntities(
   stream: (signal?: AbortSignal) => AsyncIterable<Uint8Array>,
   signal?: AbortSignal,
-): AsyncIterable<T> {
+): AsyncIterable<unknown> {
   const lines = deserializeTextLines(stream, signal);
 
   for await (const line of lines) {

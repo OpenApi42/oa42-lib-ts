@@ -40,58 +40,50 @@ export class OperationNotImplemented extends ServerError {
   }
 }
 
-export class MissingRequestContentType extends ServerError {
-  public readonly name = "MissingRequestContentType";
+export class MissingServerRequestContentType extends ServerError {
+  public readonly name = "MissingServerRequestContentType";
 
   constructor() {
-    super(`Missing content-type in request`);
+    super(`Missing content-type in server request`);
   }
 }
 
-export class UnexpectedResponseStatusCode extends ServerError {
-  public readonly name = "UnexpectedStatusCode";
+export class UnexpectedServerRequestContentType extends ServerError {
+  public readonly name = "UnexpectedServerRequestContentType";
 
   constructor() {
-    super(`Unexpected status code for response`);
+    super(`Unexpected content-type in server request`);
   }
 }
 
-export class UnexpectedRequestContentType extends ServerError {
-  public readonly name = "UnexpectedRequestContentType";
+export class ServerRequestParameterValidationFailed extends ServerError {
+  public readonly name = "ServerRequestParameterValidationFailed";
 
   constructor() {
-    super(`Unexpected content-type in request`);
+    super(`Server request parameter validation failed`);
   }
 }
 
-export class RequestParameterValidationFailed extends ServerError {
-  public readonly name = "Request parameter validation failed";
+export class ServerResponseParameterValidationFailed extends ServerError {
+  public readonly name = "ServerResponseParameterValidationFailed";
 
   constructor() {
-    super(`Request parameter validation failed`);
+    super(`Server response parameter validation failed`);
   }
 }
 
-export class ResponseParameterValidationFailed extends ServerError {
-  public readonly name = "Response parameter validation failed";
+export class ServerRequestEntityValidationFailed extends ServerError {
+  public readonly name = "ServerRequestEntityValidationFailed";
 
   constructor() {
-    super(`Response parameter validation failed`);
+    super(`Server request entity validation failed`);
   }
 }
 
-export class RequestEntityValidationFailed extends ServerError {
-  public readonly name = "Request parameter validation failed";
+export class ServerResponseEntityValidationFailed extends ServerError {
+  public readonly name = "ServerResponseEntityValidationFailed";
 
   constructor() {
-    super(`Request entity validation failed`);
-  }
-}
-
-export class ResponseEntityValidationFailed extends ServerError {
-  public readonly name = "Response entity validation failed";
-
-  constructor() {
-    super(`Response entity validation failed`);
+    super(`Server response entity validation failed`);
   }
 }
